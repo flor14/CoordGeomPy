@@ -21,8 +21,8 @@ def dist_pll_lines(m, b1, b2):
 
     Examples
     --------
-    >>> dist_pll_lines(m, b1, b2)
+    >>> dist_pll_lines(3.0, 4.5, 2.5)
+    0.25
+    >>> dist_pll_lines(-4, 11, 23)
+    0.8
     """
-    with open(input_file, "r") as file:
-        text = file.read()
-    return text
