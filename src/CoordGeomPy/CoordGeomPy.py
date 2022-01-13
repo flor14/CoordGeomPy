@@ -63,3 +63,45 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
     >>> get_distance(x1, x2, metric="Minkowski", 3)
     6.3496
     """
+
+def is_intersection(m1, b1, m2, b2):
+    """Determines whether two infinite lines intersect in 3-dimensional space.
+
+    Note that if two equivalent lines are provided, they will be considered as intersecting. 
+
+    Parameters
+    ----------
+    m1 : list or tuple of floats
+        This list corresponds to a 3-dimensional vector ⟨𝑚𝑥1,𝑚𝑦1,𝑚𝑧1⟩ describing the 
+        direction vector (or slope) of line 2. List or tuple must be of length 3. 
+    b1 : list or tuple of floats
+        Any point on line 1. This list corresponds to a point (x1, y1, z1) that lies on line 1. 
+        This point must lie on line 2. 
+    m2 : list or tuple of floats
+        This list corresponds to a 3-dimensional vector ⟨𝑚𝑥2,𝑚𝑦2,𝑚𝑧2⟩ describing the 
+        direction vector (or slope) of line 2.
+    b2 : list or tuple of floats
+        Any point on line 2. This list corresponds to a point (x2, y2, z2) that lies on line 2. 
+        This point must lie on line 2. 
+
+    Returns
+    -------
+    bool
+        True if there is intersection, False if not. 
+
+    Examples
+    --------
+    >>> m1 = (1, 0, 0)
+    >>> m2 = (0, 1, 0)
+    >>> b1 = (0, 0, 0)
+    >>> b2 = (0, 0, 0)
+    >>> is_intersection(m1, b1, m2, b2)
+    True
+
+    >>> m3 = (1, 1, 1)
+    >>> m4 = (1, 1, 1)
+    >>> b3 = (0, 0, 0)
+    >>> b4 = (1, 1, 1)
+    >>> is_intersection(m3, m4, b3, b4)
+    False
+    """
