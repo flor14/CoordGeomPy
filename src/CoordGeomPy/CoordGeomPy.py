@@ -16,7 +16,7 @@ def dist_pll_lines(m, b1, b2):
     Returns
     -------
     float
-        distance d between two parallel lines
+        The distance d between two parallel lines.
 
     Examples
     --------
