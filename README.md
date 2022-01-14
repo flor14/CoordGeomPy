@@ -38,7 +38,7 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 We welcome and recognize all contributors. Names and GitHub @usernames listed below:
 
 - Arlin Cherian: @arlincherian
-- Nico Van Den Hoof: @nicovandenhoff
+- Nico Van Den Hooff: @nicovandenhooff
 - Xheren Zu: @ZherenXu
 - Jordan Casoli: @jcasoli
 
