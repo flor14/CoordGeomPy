@@ -1,4 +1,4 @@
-def dist_pll_lines(m, b1, b2):
+def dist_pll_lines_2d(m, b1, b2):
     """Finding the distance between two parallel lines.
 
     The distance between two parallel lines is the distance between the points where a perpendicular line intersects.
@@ -64,7 +64,7 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
     6.3496
     """
 
-def is_intersection(m1, b1, m2, b2):
+def is_intersection_3d(m1, b1, m2, b2):
     """Determines whether two infinite lines intersect in 3-dimensional space.
 
     Note that if two equivalent lines are provided, they will be considered as intersecting. 
