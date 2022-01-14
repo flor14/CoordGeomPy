@@ -1,5 +1,9 @@
 # Code of Conduct
 
+CoordGeomPy implements the following Code of Conduct.  If you are planning to contribute to the project, we ask you to please follow the code below.
+
+The Code of Conduct is enforced by the Core Team Members: Jordan, Arlin, Nico and Zheren.
+
 ## Our Pledge
 
 In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
