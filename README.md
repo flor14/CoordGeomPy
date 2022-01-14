@@ -19,7 +19,7 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 ## Contributors
 
 - Arlin Cherian
-- Nico Van Den Hoof
+- Nico Van Den Hooff
 - Xheren Zu
 - Jordan Casoli
 
