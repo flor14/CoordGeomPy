@@ -128,6 +128,6 @@ def is_orthogonal(m1, m2):
     True
     >>> m3 = (0, 0, 1)
     >>> m4 = (1, 1, 1)
-    >>> is_intersection(m3, m4)
+    >>> is_orthogonal(m3, m4)
     False
     """
