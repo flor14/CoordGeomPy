@@ -41,12 +41,12 @@ We welcome and recognize all contributors. Names and GitHub @usernames listed be
 
 - Arlin Cherian: @arlincherian
 - Nico Van Den Hooff: @nicovandenhooff
-- Xheren Zu: @ZherenXu
+- Zheren Xu: @ZherenXu
 - Jordan Casoli: @jcasoli
 
 ## License
 
-`CoordGeomPy` was created by Jordan Casoli. It is licensed under the terms of the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+`CoordGeomPy` was created by Jordan Casoli, Nico Van Den Hooff, Arlin Cherian and Zheren Xu. It is licensed under the terms of the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Credits
 
