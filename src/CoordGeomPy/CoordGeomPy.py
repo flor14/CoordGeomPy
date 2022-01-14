@@ -105,3 +105,29 @@ def is_intersection(m1, b1, m2, b2):
     >>> is_intersection(m3, m4, b3, b4)
     False
     """
+    
+def is_orthogonal(m1, m2):
+    """Determines whether two infinite lines are perpendicular in n-dimensional space.
+    Parameters
+    ----------
+    m1 : list or tuple of floats
+        This list corresponds to a n-dimensional vector ⟨mx1, my1, mz1, ...⟩ describing the 
+        direction vector of line 1.
+    m2 : list or tuple of floats
+        This list corresponds to a n-dimensional vector ⟨mx2, my2, mz2, ...⟩ describing the 
+        direction vector of line 2. Demensions of line 1 and line 2 must be equal. 
+    Returns
+    -------
+    bool
+        True if there is orthogonal, False if not. 
+    Examples
+    --------
+    >>> m1 = (1, 0)
+    >>> m2 = (0, 1)
+    >>> is_orthogonal(m1, m2)
+    True
+    >>> m3 = (0, 0, 1)
+    >>> m4 = (1, 1, 1)
+    >>> is_intersection(m3, m4)
+    False
+    """
