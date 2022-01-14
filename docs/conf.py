@@ -7,8 +7,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u"CoordGeomPy"
-copyright = u"2022, Jordan Casoli"
-author = u"Jordan Casoli"
+copyright = u"2022, Jordan Casoli, Nico Van Den Hooff, Arlin Cherian and Zheren Xu"
+author = u"Jordan Casoli, Nico Van Den Hooff, Arlin Cherian and Zheren Xu"
 
 # -- General configuration ---------------------------------------------------
 
