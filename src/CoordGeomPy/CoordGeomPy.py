@@ -73,6 +73,9 @@ def is_intersection_3d(m1, b1, m2, b2):
     Also note that this function expects integer values for x, y, z coordinates. Values will be rounded 
     if integer values are not provided. 
 
+    This algorithm uses the following idea to test for intersection: Two (non parallel) lines intersect 
+    in 3d space if and only if they are coplanar.  
+
     Parameters
     ----------
     m1 : list or tuple of floats
@@ -111,14 +114,14 @@ def is_intersection_3d(m1, b1, m2, b2):
     """
     
     # Validate input
-    if not isinstance(m1, tuple) or not isinstance(m2, tuple):
-        raise TypeError("Only tuples are supported. Please provide m1 & m2 as tuples")
+    if not isinstance(m1, (list, tuple) or not isinstance(m2, (list, tuple))):
+        raise TypeError("Only lists or tuples are supported. Please provide m1 & m2 as lists or tuples")
 
-    if not isinstance(b1, tuple) or not isinstance(b1, tuple):
-        raise TypeError("Only tuples are supported. Please provide b1 & b2 as tuples")
+    if not isinstance(b1, (list, tuple)) or not isinstance(b1, (list, tuple)):
+        raise TypeError("Only lists or tuples are supported. Please provide b1 & b2 as lists or tuples.")
 
     if len(m1) != 3 or len(m2) != 3 or len(b1) != 3 or len(b2) != 3: 
-        raise Exception("All tuples should of length 3. Please check your inputs")
+        raise ValueError("All tuples should of length 3. Please check your inputs")
 
     # Ensure all values are integers
     m1 = (round(m1[0]), round(m1[1]), round(m1[2]))
@@ -126,8 +129,14 @@ def is_intersection_3d(m1, b1, m2, b2):
     b1 = (round(b1[0]), round(b1[1]), round(b1[2]))
     b2 = (round(b2[0]), round(b2[1]), round(b2[2]))
 
+    
+    m1 = np.array(m1)
+    m2 = np.array(m2)
+    b1 = np.array(b1)
+    b2 = np.array(b2)
+
     # Check if lines are parallel
-    if m1 == m2: 
+    if (m1 == m2).all(): 
         return False
     
     # Lines intersect if and only if they lie on the same plane (and are not parallel). 
