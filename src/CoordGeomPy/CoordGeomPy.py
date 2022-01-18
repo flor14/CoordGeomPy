@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def dist_pll_lines_2d(m, b1, b2):
     """Finding the distance between two parallel lines.
 
@@ -64,30 +67,67 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
     6.3496
     """
 
+    # cast to lower for flexibility
+    metric = metric.lower()
+
+    # verify distance metric
+    if metric not in ["euclidean", "manhattan", "chebyshev", "inkowski"]:
+        raise ValueError(f"Invalid distance metric: {metric}")
+
+    # verify that vectors are passed as python lists
+    if not isinstance(x1, list) or not isinstance(x2, list):
+        raise TypeError("x1 and x2 must be Python lists")
+
+    # verify dimensions of vectors match
+    if len(x1) != len(x2):
+        raise TypeError("x1 and x2 must be the same length")
+
+    # verify p if minkowski distance is metric
+    if metric.lower() == "minkowski":
+        if not isinstance(p, (int, float)):
+            raise TypeError("p must be int or float")
+
+    # convert to numpy arrays
+    x1 = np.array(x1)
+    x2 = np.array(x2)
+
+    # check if arrays are equal if so distance is 0
+    if np.array_equal(x1, x2):
+        return 0
+    elif metric == "euclidean":
+        return np.sqrt(np.sum((np.square(x1 - x2))))
+    elif metric == "manhattan":
+        return np.sum(np.abs(x1 - x2))
+    elif metric == "chebyshev":
+        return np.max(np.abs(x1 - x2))
+    elif metric == "minkowski":
+        return np.power(np.sum(np.power(np.abs(x1 - x2), p)), 1 / p)
+
+
 def is_intersection_3d(m1, b1, m2, b2):
     """Determines whether two infinite lines intersect in 3-dimensional space.
 
-    Note that if two equivalent lines are provided, they will be considered as intersecting. 
+    Note that if two equivalent lines are provided, they will be considered as intersecting.
 
     Parameters
     ----------
     m1 : list or tuple of floats
-        This list corresponds to a 3-dimensional vector ⟨𝑚𝑥1,𝑚𝑦1,𝑚𝑧1⟩ describing the 
-        direction vector (or slope) of line 2. List or tuple must be of length 3. 
+        This list corresponds to a 3-dimensional vector ⟨𝑚𝑥1,𝑚𝑦1,𝑚𝑧1⟩ describing the
+        direction vector (or slope) of line 2. List or tuple must be of length 3.
     b1 : list or tuple of floats
-        Any point on line 1. This list corresponds to a point (x1, y1, z1) that lies on line 1. 
-        This point must lie on line 2. 
+        Any point on line 1. This list corresponds to a point (x1, y1, z1) that lies on line 1.
+        This point must lie on line 2.
     m2 : list or tuple of floats
-        This list corresponds to a 3-dimensional vector ⟨𝑚𝑥2,𝑚𝑦2,𝑚𝑧2⟩ describing the 
+        This list corresponds to a 3-dimensional vector ⟨𝑚𝑥2,𝑚𝑦2,𝑚𝑧2⟩ describing the
         direction vector (or slope) of line 2.
     b2 : list or tuple of floats
-        Any point on line 2. This list corresponds to a point (x2, y2, z2) that lies on line 2. 
-        This point must lie on line 2. 
+        Any point on line 2. This list corresponds to a point (x2, y2, z2) that lies on line 2.
+        This point must lie on line 2.
 
     Returns
     -------
     bool
-        True if there is intersection, False if not. 
+        True if there is intersection, False if not.
 
     Examples
     --------
@@ -105,21 +145,22 @@ def is_intersection_3d(m1, b1, m2, b2):
     >>> is_intersection(m3, m4, b3, b4)
     False
     """
-    
+
+
 def is_orthogonal(m1, m2):
     """Determines whether two infinite lines are perpendicular in n-dimensional space.
     Parameters
     ----------
     m1 : list or tuple of floats
-        This list corresponds to a n-dimensional vector ⟨mx1, my1, mz1, ...⟩ describing the 
+        This list corresponds to a n-dimensional vector ⟨mx1, my1, mz1, ...⟩ describing the
         direction vector of line 1.
     m2 : list or tuple of floats
-        This list corresponds to a n-dimensional vector ⟨mx2, my2, mz2, ...⟩ describing the 
-        direction vector of line 2. Demensions of line 1 and line 2 must be equal. 
+        This list corresponds to a n-dimensional vector ⟨mx2, my2, mz2, ...⟩ describing the
+        direction vector of line 2. Demensions of line 1 and line 2 must be equal.
     Returns
     -------
     bool
-        True if there is orthogonal, False if not. 
+        True if there is orthogonal, False if not.
     Examples
     --------
     >>> m1 = (1, 0)
