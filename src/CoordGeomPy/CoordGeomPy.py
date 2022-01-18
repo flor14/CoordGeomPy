@@ -66,10 +66,12 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
     6.3496
     """
 
-def get_intersection_3d(m1, b1, m2, b2):
+def is_intersection_3d(m1, b1, m2, b2):
     """Determines whether two infinite lines intersect in 3-dimensional space.
 
-    Note that if two equivalent lines are provided, they will be considered as intersecting. 
+    Note that if two parallel lines are provided, they will be considered as NOT intersecting. 
+    Also note that this function expects integer values for x, y, z coordinates. Values will be rounded 
+    if integer values are not provided. 
 
     Parameters
     ----------
@@ -100,18 +102,35 @@ def get_intersection_3d(m1, b1, m2, b2):
     >>> is_intersection(m1, b1, m2, b2)
     True
 
-    >>> m3 = (1, 1, 1)
-    >>> m4 = (1, 1, 1)
-    >>> b3 = (0, 0, 0)
-    >>> b4 = (1, 1, 1)
+    >>> m3 = (1, 3, -1)
+    >>> m4 = (2, 1, 4)
+    >>> b3 = (0, -2, 4)
+    >>> b4 = (0, 3, -3)
     >>> is_intersection(m3, m4, b3, b4)
     False
     """
-    # Validate input
-    if not isinstance(m1, tuple) or not isinstance(m1, tuple):
-        raise TypeError("Only tuples are supported. Please give input parameters as tuples.")
     
-    # Lines can only intersect if they lie on the same plane. 
+    # Validate input
+    if not isinstance(m1, tuple) or not isinstance(m2, tuple):
+        raise TypeError("Only tuples are supported. Please provide m1 & m2 as tuples")
+
+    if not isinstance(b1, tuple) or not isinstance(b1, tuple):
+        raise TypeError("Only tuples are supported. Please provide b1 & b2 as tuples")
+
+    if len(m1) != 3 or len(m2) != 3 or len(b1) != 3 or len(b2) != 3: 
+        raise Exception("All tuples should of length 3. Please check your inputs")
+
+    # Ensure all values are integers
+    m1 = (round(m1[0]), round(m1[1]), round(m1[2]))
+    m2 = (round(m2[0]), round(m2[1]), round(m2[2]))
+    b1 = (round(b1[0]), round(b1[1]), round(b1[2]))
+    b2 = (round(b2[0]), round(b2[1]), round(b2[2]))
+
+    # Check if lines are parallel
+    if m1 == m2: 
+        return False
+    
+    # Lines intersect if and only if they lie on the same plane (and are not parallel). 
     x = np.cross(m1, m2)
     disp = np.array(b2) - np.array(b1)
     if np.dot(x, disp) == 0:
