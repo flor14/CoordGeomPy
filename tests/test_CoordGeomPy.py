@@ -1,5 +1,31 @@
 from CoordGeomPy import CoordGeomPy
+from CoordGeomPy import dist_pll_lines_2d
+import numpy as np
 import pytest
+
+def test_dist_pll_lines_2d():
+    """Finding the distance between two parallel lines"""
+
+    m = 2
+    b1 = 4
+    b2 = -1
+    d = 2.23606797749979
+
+    # data type errors 
+    assert isinstance(m, (int, float)), "Slope is neither an integer nor a float"
+    assert isinstance(b1, (int, float)), "Intercept of line 1 is neither an integer nor a float"
+    assert isinstance(b2, (int, float)), "Intercept of line 2 is neither an integer nor a float"
+    assert isinstance(d, (int, float)), "Result is wrong data type.."
+
+    # result value approximation
+    assert np.isclose(dist_pll_lines_2d(m, b1, b2), 2.2360, atol=0.05)
+    assert round(dist_pll_lines_2d(m, b1, b2), 2) == 2.24
+
+    # ivalid arguments check
+    try: 
+        dist_pll_lines_2d(m)
+    except: 
+        print("Missing arguments, please add all the inputs required!")
 
 
 def test_get_distance_int():
