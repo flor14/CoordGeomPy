@@ -1,6 +1,3 @@
-
-import math
-
 import numpy as np
 
 
@@ -29,13 +26,22 @@ def dist_pll_lines_2d(m, b1, b2):
     Examples
     --------
     >>> dist_pll_lines_2d(3.0, 4.5, 2.5)
-    0.25
+    0.6324
     >>> dist_pll_lines_2d(-4, 11, 23)
-    0.8
+    2.9104
     """
     # apply corresponding values from the two parallel line equations to 
     # the equation below
-    d = abs(b2 - b1)/ math.sqrt(m**2 + 1)
+    if not isinstance(m, (int, float)):
+        raise TypeError("m must be an integer or float")
+    
+    if not isinstance(b1, (int, float)):
+        raise TypeError("b1 must be an integer or float")
+    
+    if not isinstance(b2, (int, float)):
+        raise TypeError("b2 must be an integer or float")
+
+    d = abs(b2 - b1)/ np.sqrt(m**2 + 1)
     return d;
 
 
@@ -77,8 +83,6 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
     >>> get_distance(x1, x2, metric="Minkowski", 3)
     6.3496
     """
-    d = abs(b2 - b1) / math.sqrt(m**2 + 1);
-    return d;
 
     # cast to lower for flexibility
     metric = metric.lower()
