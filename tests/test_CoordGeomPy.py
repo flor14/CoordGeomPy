@@ -21,11 +21,7 @@ def test_dist_pll_lines_2d():
     assert CoordGeomPy.dist_pll_lines_2d(m, b1, b2) == d
     assert round(CoordGeomPy.dist_pll_lines_2d(2, 4, -1), 2) == 2.24
 
-    # ivalid arguments check
-    try: 
-        dist_pll_lines_2d(m)
-    except: 
-        print("Missing arguments, please add all the inputs required!")
+   
 
 
 def test_get_distance_int():
