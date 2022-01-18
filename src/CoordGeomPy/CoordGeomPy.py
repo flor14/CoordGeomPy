@@ -2,7 +2,8 @@ def dist_pll_lines_2d(m, b1, b2):
     """Finding the distance between two parallel lines.
 
     The distance between two parallel lines is the distance between the points where a perpendicular line intersects.
-    This function will find that distance (d).
+    This function will find that distance (d). The parameters of the function can be obtained from the equation of a parallel 
+    line y = mx + b.
 
     Parameters
     ----------
