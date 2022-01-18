@@ -1,3 +1,5 @@
+import math
+
 def dist_pll_lines_2d(m, b1, b2):
     """Finding the distance between two parallel lines.
 
@@ -8,7 +10,8 @@ def dist_pll_lines_2d(m, b1, b2):
     Parameters
     ----------
     m  : float
-        slope of two parallel lines which are the same.
+        slope of two parallel lines which are the same, i.e., slope of 
+        line 1, m1 = -(1/m2)
     b1 : float
         intercept of line 1 where y = mx + b1
     b2 : float
@@ -21,11 +24,17 @@ def dist_pll_lines_2d(m, b1, b2):
 
     Examples
     --------
-    >>> dist_pll_lines(3.0, 4.5, 2.5)
+    >>> dist_pll_lines_2d(3.0, 4.5, 2.5)
     0.25
-    >>> dist_pll_lines(-4, 11, 23)
+    >>> dist_pll_lines_2d(-4, 11, 23)
     0.8
     """
+    # apply corresponding values from the two parallel line equations to 
+    # the equation below
+    d = abs(b2 - b1)/ math.sqrt(m**2 + 1)
+    return d;
+
+
 
 
 def get_distance(x1, x2, metric="Euclidean", p=None):
@@ -64,6 +73,8 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
     >>> get_distance(x1, x2, metric="Minkowski", 3)
     6.3496
     """
+    d = abs(b2 - b1) / math.sqrt(m**2 + 1);
+    return d;
 
 def is_intersection_3d(m1, b1, m2, b2):
     """Determines whether two infinite lines intersect in 3-dimensional space.
