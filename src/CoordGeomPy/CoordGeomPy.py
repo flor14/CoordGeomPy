@@ -1,3 +1,5 @@
+import numpy as np
+
 def dist_pll_lines_2d(m, b1, b2):
     """Finding the distance between two parallel lines.
 
@@ -64,7 +66,7 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
     6.3496
     """
 
-def is_intersection_3d(m1, b1, m2, b2):
+def get_intersection_3d(m1, b1, m2, b2):
     """Determines whether two infinite lines intersect in 3-dimensional space.
 
     Note that if two equivalent lines are provided, they will be considered as intersecting. 
@@ -105,7 +107,18 @@ def is_intersection_3d(m1, b1, m2, b2):
     >>> is_intersection(m3, m4, b3, b4)
     False
     """
+    # Validate input
+    if not isinstance(m1, tuple) or not isinstance(m1, tuple):
+        raise TypeError("Only tuples are supported. Please give input parameters as tuples.")
     
+    # Lines can only intersect if they lie on the same plane. 
+    x = np.cross(m1, m2)
+    disp = np.array(b2) - np.array(b1)
+    if np.dot(x, disp) == 0:
+        return True
+    else: 
+        return False
+
 def is_orthogonal(m1, m2):
     """Determines whether two infinite lines are perpendicular in n-dimensional space.
     Parameters
