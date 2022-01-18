@@ -18,8 +18,8 @@ def test_dist_pll_lines_2d():
     assert isinstance(d, (int, float)), "Result is wrong data type.."
 
     # result value approximation
-    assert np.isclose(dist_pll_lines_2d(m, b1, b2), 2.2360, atol=0.05)
-    assert round(dist_pll_lines_2d(m, b1, b2), 2) == 2.24
+    assert CoordGeomPy.dist_pll_lines_2d(m, b1, b2) == d
+    assert round(CoordGeomPy.dist_pll_lines_2d(2, 4, -1), 2) == 2.24
 
     # ivalid arguments check
     try: 
