@@ -1,5 +1,8 @@
 from CoordGeomPy import CoordGeomPy
+from CoordGeomPy.CoordGeomPy import dist_pll_lines_2d
+import numpy as np
 import pytest
+
 
 def test_is_intersection_3d_base():
     """Base tests on correct input"""
@@ -51,29 +54,41 @@ def test_is_intersection_3d_input():
     b1 = (0, 0, 0)
     with pytest.raises(ValueError): 
         CoordGeomPy.is_intersection_3d(m1, b1, m2, b2)
-=======
-from CoordGeomPy import dist_pll_lines_2d
-import numpy as np
-import pytest
 
-def test_dist_pll_lines_2d():
-    """Finding the distance between two parallel lines"""
 
+def test_dist_pll_lines_2d_int():
+    """Tests the distance between two parallel lines with integer input"""
     m = 2
     b1 = 4
     b2 = -1
-    d = 2.23606797749979
+    
+    assert dist_pll_lines_2d(m, b1, b2) == 2.23606797749979
+    assert round(dist_pll_lines_2d(m, b1, b2), 2) == 2.24
 
-    # data type errors 
-    assert isinstance(m, (int, float)), "Slope is neither an integer nor a float"
-    assert isinstance(b1, (int, float)), "Intercept of line 1 is neither an integer nor a float"
-    assert isinstance(b2, (int, float)), "Intercept of line 2 is neither an integer nor a float"
-    assert isinstance(d, (int, float)), "Result is wrong data type.."
+def test_dist_pll_lines_2d_float():
+    """Tests the distance between two parallel lines with integer input"""
+    m = 3.0
+    b1 = 4.5
+    b2 = 2.5
+    
+    assert dist_pll_lines_2d(m, b1, b2) == 0.6324555320336759
+    assert round(dist_pll_lines_2d(m, b1, b2), 2) == 0.63
 
-    # result value approximation
-    assert CoordGeomPy.dist_pll_lines_2d(m, b1, b2) == d
-    assert round(CoordGeomPy.dist_pll_lines_2d(2, 4, -1), 2) == 2.24
-
+def test_dist_pll_lines_2d_invalid():
+    """Tests the distance between two parallel lines with invalid input"""
+    m = 2
+    b1 = 4
+    b2 = -1
+    
+    # invalid m value
+    with pytest.raises(TypeError):
+        dist_pll_lines_2d("a", b1, b2)
+    
+    with pytest.raises(TypeError):
+        dist_pll_lines_2d(m, "abc", b2)
+        
+    with pytest.raises(TypeError):
+        dist_pll_lines_2d(m, b1 , "xyz")
    
 
 
