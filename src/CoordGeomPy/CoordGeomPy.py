@@ -1,16 +1,17 @@
 import numpy as np
 
+
 def dist_pll_lines_2d(m, b1, b2):
     """Finding the distance between two parallel lines.
 
     The distance between two parallel lines is the distance between the points where a perpendicular line intersects.
-    This function will find that distance (d). The parameters of the function can be obtained from the equation of a parallel 
+    This function will find that distance (d). The parameters of the function can be obtained from the equation of a parallel
     line y = mx + b.
 
     Parameters
     ----------
     m  : float
-        slope of two parallel lines which are the same, i.e., slope of 
+        slope of two parallel lines which are the same, i.e., slope of
         line 1, m1 = -(1/m2)
     b1 : float
         intercept of line 1 where y = mx + b1
@@ -29,26 +30,25 @@ def dist_pll_lines_2d(m, b1, b2):
     >>> dist_pll_lines_2d(-4, 11, 23)
     2.9104
     """
-    # apply corresponding values from the two parallel line equations to 
+    # apply corresponding values from the two parallel line equations to
     # the equation below
     if not isinstance(m, (int, float)):
         raise TypeError("m must be an integer or float")
-    
+
     if not isinstance(b1, (int, float)):
         raise TypeError("b1 must be an integer or float")
-    
+
     if not isinstance(b2, (int, float)):
         raise TypeError("b2 must be an integer or float")
-    
-     # checking if invalid arguments are entered
-    try: 
+
+    # checking if invalid arguments are entered
+    try:
         dist_pll_lines_2d(m)
-    except: 
+    except:
         print("Missing arguments, please add all the inputs required!")
 
-    d = abs(b2 - b1)/ np.sqrt(m**2 + 1)
+    d = abs(b2 - b1) / np.sqrt(m ** 2 + 1)
     return d
-
 
 
 def get_distance(x1, x2, metric="Euclidean", p=None):
@@ -92,7 +92,7 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
     metric = metric.lower()
 
     # verify distance metric
-    if metric not in ["euclidean", "manhattan", "chebyshev", "inkowski"]:
+    if metric not in ["euclidean", "manhattan", "chebyshev", "minkowski"]:
         raise ValueError(f"Invalid distance metric: {metric}")
 
     # verify that vectors are passed as python lists
@@ -128,12 +128,12 @@ def get_distance(x1, x2, metric="Euclidean", p=None):
 def is_intersection_3d(m1, b1, m2, b2):
     """Determines whether two infinite lines intersect in 3-dimensional space.
 
-    Note that if two parallel lines are provided, they will be considered as NOT intersecting. 
-    Also note that this function expects integer values for x, y, z coordinates. Values will be rounded 
-    if integer values are not provided. 
+    Note that if two parallel lines are provided, they will be considered as NOT intersecting.
+    Also note that this function expects integer values for x, y, z coordinates. Values will be rounded
+    if integer values are not provided.
 
-    This algorithm uses the following idea to test for intersection: Two (non parallel) lines intersect 
-    in 3d space if and only if they are coplanar.  
+    This algorithm uses the following idea to test for intersection: Two (non parallel) lines intersect
+    in 3d space if and only if they are coplanar.
 
     Parameters
     ----------
@@ -171,15 +171,19 @@ def is_intersection_3d(m1, b1, m2, b2):
     >>> is_intersection(m3, m4, b3, b4)
     False
     """
-    
+
     # Validate input
     if not isinstance(m1, (list, tuple) or not isinstance(m2, (list, tuple))):
-        raise TypeError("Only lists or tuples are supported. Please provide m1 & m2 as lists or tuples")
+        raise TypeError(
+            "Only lists or tuples are supported. Please provide m1 & m2 as lists or tuples"
+        )
 
     if not isinstance(b1, (list, tuple)) or not isinstance(b1, (list, tuple)):
-        raise TypeError("Only lists or tuples are supported. Please provide b1 & b2 as lists or tuples.")
+        raise TypeError(
+            "Only lists or tuples are supported. Please provide b1 & b2 as lists or tuples."
+        )
 
-    if len(m1) != 3 or len(m2) != 3 or len(b1) != 3 or len(b2) != 3: 
+    if len(m1) != 3 or len(m2) != 3 or len(b1) != 3 or len(b2) != 3:
         raise ValueError("All tuples should of length 3. Please check your inputs")
 
     # Ensure all values are integers
@@ -188,24 +192,23 @@ def is_intersection_3d(m1, b1, m2, b2):
     b1 = (round(b1[0]), round(b1[1]), round(b1[2]))
     b2 = (round(b2[0]), round(b2[1]), round(b2[2]))
 
-    
     m1 = np.array(m1)
     m2 = np.array(m2)
     b1 = np.array(b1)
     b2 = np.array(b2)
 
     # Check if lines are parallel
-    if (m1 == m2).all(): 
+    if (m1 == m2).all():
         return False
-    
-    # Lines intersect if and only if they lie on the same plane (and are not parallel). 
+
+    # Lines intersect if and only if they lie on the same plane (and are not parallel).
     x = np.cross(m1, m2)
     disp = np.array(b2) - np.array(b1)
     if np.dot(x, disp) == 0:
         return True
-    else: 
+    else:
         return False
-      
+
 
 def is_orthogonal(m1, m2):
     """Determines whether two infinite lines are perpendicular in n-dimensional space.
