@@ -4,7 +4,7 @@ A simple coordinate geometry helper package. This package is developed for the U
 
 ## Overview
 
-This starter package allows users to perform various geometric operations like calculate distance between them two parallel lines, distance between two n dimensional vectors, intersection of lines in 3-Dimensional space and so on. Our motivation in creating this package was to allow users with minimal experience in python coding to be able to perform these geometric calculations easily.
+This starter package allows users to perform various geometric operations like calculate distance between two parallel lines, distance between two n dimensional vectors, intersection of lines in 3-Dimensional space and so on. Our motivation in creating this package was to allow users with minimal experience in python coding to be able to perform these geometric calculations easily.
 ## Installation
 
 ```bash
