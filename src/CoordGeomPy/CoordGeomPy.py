@@ -233,3 +233,20 @@ def is_orthogonal(m1, m2):
     >>> is_orthogonal(m3, m4)
     False
     """
+    # Validate input
+    if not isinstance(m1, (list, tuple) or not isinstance(m2, (list, tuple))):
+        raise TypeError("m1 and m2 must be lists or tuples")
+
+    if len(m1) == 0 or len(m2) == 0:
+        raise ValueError("Inputs cannot be empty lists or tuples")
+
+    # Checking if m1 and m2 have the same dimension
+    if len(m1) != len(m2):
+        raise ValueError("m1 and m2 must be the same length")
+
+    line1 = np.array(m1)
+    line2 = np.array(m2)
+    if np.dot(line1, line2) == 0:
+        return True
+    else:
+        return False
