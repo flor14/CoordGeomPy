@@ -47,8 +47,7 @@ def dist_pll_lines_2d(m, b1, b2):
         print("Missing arguments, please add all the inputs required!")
 
     d = abs(b2 - b1)/ np.sqrt(m**2 + 1)
-    return d;
-
+    return d
 
 
 
@@ -237,8 +236,8 @@ def is_orthogonal(m1, m2):
     if not isinstance(m1, (list, tuple) or not isinstance(m2, (list, tuple))):
         raise TypeError("m1 and m2 must be lists or tuples")
 
-    if len(m1) == 0 or len(m2) == 0:
-        raise ValueError("Inputs cannot be empty lists or tuples")
+    if len(m1) < 1 or len(m2) < 1:
+        raise ValueError("The dimension of inputs must be at least 2")
 
     # Checking if m1 and m2 have the same dimension
     if len(m1) != len(m2):
@@ -246,7 +245,7 @@ def is_orthogonal(m1, m2):
 
     line1 = np.array(m1)
     line2 = np.array(m2)
-    if np.dot(line1, line2) == 0:
+    if round(np.dot(line1, line2), 10) == 0:
         return True
     else:
         return False
