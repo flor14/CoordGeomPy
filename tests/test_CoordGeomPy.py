@@ -90,6 +90,8 @@ def test_dist_pll_lines_2d_invalid():
     with pytest.raises(TypeError):
         dist_pll_lines_2d(m, b1 , "xyz")
    
+# ==============================================================================================
+
 
 def test_get_distance_int():
     """Tests the get_distance function with integer input"""
@@ -100,7 +102,7 @@ def test_get_distance_int():
     assert get_distance(x1, x2, "Euclidean") == 8
     assert get_distance(x1, x2, "Manhattan") == 16
     assert get_distance(x1, x2, "Chebyshev") == 4
-    assert round(get_distance(x1, x2, "Minokoswki", 3), 2) == 6.350
+    assert round(get_distance(x1, x2, "Minkowski", 3), 2) == 6.350
 
 
 def test_get_distance_float():
@@ -112,7 +114,7 @@ def test_get_distance_float():
     assert round(get_distance(x1, x2, "euclidean"), 2) == 14.48
     assert round(get_distance(x1, x2, "manhattan"), 2) == 24.67
     assert get_distance(x1, x2, "chebyshev") == 10
-    assert round(get_distance(x1, x2, "minokoswki", -5), 2) == 5.94
+    assert round(get_distance(x1, x2, "minkowski", -5), 2) == 5.94
 
 
 def test_get_distance_invalid():
@@ -140,7 +142,7 @@ def test_get_distance_invalid():
 
     # invalid p value with Minokowski distance
     with pytest.raises(TypeError):
-        get_distance(x1, x2, "minokoswki", "1")
+        get_distance(x1, x2, "minkowski", "1")
 
 # ==============================================================================================
 
