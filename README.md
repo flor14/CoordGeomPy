@@ -8,7 +8,7 @@ This starter package allows users to perform various geometric operations like c
 ## Installation
 
 ```bash
-$ pip install git+https://github.com/UBC-MDS/CoordGeomPy.git@v0.2.0
+$ pip install git+https://github.com/UBC-MDS/CoordGeomPy.git@v1.0.0
 ```
 
 ## Features
