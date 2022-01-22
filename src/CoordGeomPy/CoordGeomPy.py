@@ -161,14 +161,14 @@ def is_intersection_3d(m1, b1, m2, b2):
     >>> m2 = (0, 1, 0)
     >>> b1 = (0, 0, 0)
     >>> b2 = (0, 0, 0)
-    >>> is_intersection(m1, b1, m2, b2)
+    >>> is_intersection_3d(m1, b1, m2, b2)
     True
 
     >>> m3 = (1, 3, -1)
     >>> m4 = (2, 1, 4)
     >>> b3 = (0, -2, 4)
     >>> b4 = (0, 3, -3)
-    >>> is_intersection(m3, m4, b3, b4)
+    >>> is_intersection_3d(m3, m4, b3, b4)
     False
     """
 
