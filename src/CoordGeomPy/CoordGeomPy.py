@@ -41,11 +41,6 @@ def dist_pll_lines_2d(m, b1, b2):
     if not isinstance(b2, (int, float)):
         raise TypeError("b2 must be an integer or float")
 
-    # checking if invalid arguments are entered
-    try:
-        dist_pll_lines_2d(m)
-    except:
-        print("Missing arguments, please add all the inputs required!")
 
     d = abs(b2 - b1) / np.sqrt(m ** 2 + 1)
     return d
