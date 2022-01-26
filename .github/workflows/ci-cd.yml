@@ -68,6 +68,7 @@ jobs:
     # Step 6. Test install from TestPyPI
     - name: Test install from TestPyPI
       run: |
+          poetry build
           pip install \
           --index-url https://test.pypi.org/simple/ \
           --extra-index-url https://pypi.org/simple \
