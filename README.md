@@ -1,4 +1,4 @@
-# CoordGeomPy
+# coordgeompy
 
 A simple coordinate geometry helper package. This package is developed for the UBC MDS DSCI 524 Collaborative Software Development course at the University of British Columbia.
 
@@ -8,7 +8,7 @@ This starter package allows users to perform various geometric operations like c
 ## Installation
 
 ```bash
-$ pip install git+https://github.com/UBC-MDS/CoordGeomPy.git@v1.0.0
+$ pip install git+https://github.com/UBC-MDS/coordgeompy.git@v1.0.0
 ```
 
 ## Features
@@ -46,8 +46,8 @@ We welcome and recognize all contributors. Names and GitHub @usernames listed be
 
 ## License
 
-`CoordGeomPy` was created by Jordan Casoli, Nico Van Den Hooff, Arlin Cherian and Zheren Xu. It is licensed under the terms of the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+`coordgeompy` was created by Jordan Casoli, Nico Van Den Hooff, Arlin Cherian and Zheren Xu. It is licensed under the terms of the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Credits
 
-`CoordGeomPy` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+`coordgeompy` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).

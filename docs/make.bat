@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=CoordGeomPy
+set SPHINXPROJ=coordgeompy
 
 if "%1" == "" goto help
 

@@ -1,4 +1,4 @@
-from CoordGeomPy.CoordGeomPy import is_intersection_3d, dist_pll_lines_2d, get_distance, is_orthogonal
+from coordgeompy.coordgeompy import is_intersection_3d, dist_pll_lines_2d, get_distance, is_orthogonal
 import numpy as np
 import pytest
 

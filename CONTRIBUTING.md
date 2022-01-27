@@ -16,33 +16,33 @@ Our project follows the [GitHub flow](https://docs.github.com/en/get-started/qui
 
 ## How to Contribute
 
-Contributing to `CoordGeomPy` follows the 5 step process outlined below:
+Contributing to `coordgeompy` follows the 5 step process outlined below:
 
 1. If you are a first-time contributor:
 
-- Go to https://github.com/UBC-MDS/CoordGeomPy and click the “fork” button to create your own copy of the project.
+- Go to https://github.com/UBC-MDS/coordgeompy and click the “fork” button to create your own copy of the project.
 
 Clone the project to your local computer:
 
 ```{bash}
-git clone https://github.com/your-username/CoordGeomPy.git
+git clone https://github.com/your-username/coordgeompy.git
 ```
 
 - Change the directory:
 
 ```{bash}
-cd CoordGeomPy
+cd coordgeompy
 ```
 
 Add the upstream repository:
 
 ```{bash}
-git remote add upstream https://github.com/UBC-MDS/CoordGeomPy
+git remote add upstream https://github.com/UBC-MDS/coordgeompy
 ```
 
 - Now, `git remote -v` will show two remote repositories named:
 
-- `upstream`, which refers to the `CoordGeomPy` repository
+- `upstream`, which refers to the `coordgeompy` repository
 - `origin`, which refers to your personal fork
 
 2. Develop your contribution:
@@ -123,4 +123,4 @@ Before you submit a pull request, check that it meets these guidelines:
 
 ## Code of Conduct
 
-Please note that the `CoordGeomPy` project is released with a [Code of Conduct](https://github.com/UBC-MDS/CoordGeomPy/blob/main/CONDUCT.md). By contributing to this project you agree to abide by its terms.
+Please note that the `coordgeompy` project is released with a [Code of Conduct](https://github.com/UBC-MDS/coordgeompy/blob/main/CONDUCT.md). By contributing to this project you agree to abide by its terms.

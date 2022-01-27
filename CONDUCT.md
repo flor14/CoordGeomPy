@@ -1,6 +1,6 @@
 # Code of Conduct
 
-CoordGeomPy implements the following Code of Conduct.  If you are planning to contribute to the project, we ask you to please follow the code below.
+coordgeompy implements the following Code of Conduct.  If you are planning to contribute to the project, we ask you to please follow the code below.
 
 The Code of Conduct is enforced by the Core Team Members: Jordan, Arlin, Nico and Zheren.
 
