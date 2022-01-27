@@ -25,5 +25,5 @@ Sphinx = "^4.4.0"
 sphinxcontrib-napoleon = "^0.7"
 
 [build-system]
-requires = ["poetry>=1.0.2", "poetry-dynamic-versioning"]
+requires = ["poetry>=1.0.0"]
 build-backend = "poetry.masonry.api"
