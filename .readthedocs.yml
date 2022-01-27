@@ -1,14 +1,7 @@
-# Required
-version: 2
-
-# Image to use
 build:
-  image: testing
-
-# Configuration
+  image: latest
 python:
   version: 3.9
-  install:
-    - requirements: docs/requirements.txt
-    - method: pip
-      path: .
+  pip_install: true
+  extra_requirements:
+    - docs
