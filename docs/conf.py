@@ -6,9 +6,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"pycounts_tb"
-copyright = u"2021, Tomas Beuzen"
-author = u"Tomas Beuzen"
+project = u"coordgeompy"
+copyright = u"2021, Florencia"
+author = u"Florencia"
 
 # -- General configuration ---------------------------------------------------
 
@@ -16,7 +16,7 @@ author = u"Tomas Beuzen"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "myst_nb",
+    "myst-nb",
     "autoapi.extension",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
