@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "CoordGeomPy"
-version = "0.1.0"
+name = "coordgeompy"
+version = "1.1.1"
 description = "A simple coordinate geometry helper package"
-authors = ["Jordan Casoli, Nico Van Den Hooff, Arlin Cherian and Zheren Xu"]
+authors = ["Florencia"]
 license = "MIT"
 readme = "README.md"
 packages = [
-    { include = "CoordGeomPy"},
+    { include = "coordgeompy" }
 ]
 
 [tool.poetry.dependencies]
@@ -25,5 +25,5 @@ Sphinx = "^4.4.0"
 sphinxcontrib-napoleon = "^0.7"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.masonry.api"
