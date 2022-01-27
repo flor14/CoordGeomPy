@@ -5,6 +5,9 @@ description = "A simple coordinate geometry helper package"
 authors = ["Florencia"]
 license = "MIT"
 readme = "README.md"
+packages = [
+    { include = "CoordGeomPy" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
