@@ -2,7 +2,8 @@
 version: 2
 
 sphinx:
-  fail_on_warning: true
+  configuration: doc/conf.py
+  fail_on_warning: false
 
 # Image to use
 build:
