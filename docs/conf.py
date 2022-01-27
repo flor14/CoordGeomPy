@@ -6,9 +6,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"CoordGeomPy"
-copyright = u"2022, Jordan Casoli, Nico Van Den Hooff, Arlin Cherian and Zheren Xu"
-author = u"Jordan Casoli, Nico Van Den Hooff, Arlin Cherian and Zheren Xu"
+project = u"pycounts_tb"
+copyright = u"2021, Tomas Beuzen"
+author = u"Tomas Beuzen"
 
 # -- General configuration ---------------------------------------------------
 
@@ -28,8 +28,6 @@ autoapi_dirs = ["../src"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
-# The master toctree document.
-master_doc = 'index'
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
