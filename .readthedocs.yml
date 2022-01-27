@@ -6,7 +6,7 @@ sphinx:
 
 # Image to use
 build:
-  image: testing
+  image: latest
 
 # Configuration
 python:
